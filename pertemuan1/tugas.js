@@ -4,7 +4,13 @@
  * Object memiliki property: name, age, major.
  * Note: Gunakan JavaScript Modern.
  */
-const users = [];
+const users = [
+  {name: "Jhon Still", age: 19, major: "Teknik Informatika"},
+  {name: "Raja Marisa", age: 20, major: "Teknik Sipil"},
+  {name: "Rebby Mangi", age: 30, major: "Pendidikan"},
+  {name: "Marisa Rebbyt", age: 21, major: "PGSD"},
+  {name: "Kankan Syarip", age: 35, major: "PAI"},
+];
 
 /**
  * Helper async
@@ -23,6 +29,9 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const all = async () => {
   await delay(300);
   // isi di sini
+  for (const user of users) {
+    console.log(user);
+  };
 };
 
 /**
@@ -37,6 +46,11 @@ const all = async () => {
 const store = async (user) => {
   await delay(300);
   // isi di sini
+  users.push({name: "Hamdan Hapidin", age: 23, major: "PGPAUD"});
+  for (const user of users) {
+    console.log(user);
+    
+  }
 };
 
 /**
@@ -51,6 +65,12 @@ const store = async (user) => {
 const update = async (index, user) => {
   await delay(300);
   // isi di sini
+  users.splice(4, 1, {name: "Ahmad Syangkan", age: 25, major: "PAI"});
+ 
+  users.forEach((element) => {
+    console.log(element);
+    
+  });
 };
 
 /**
@@ -65,6 +85,11 @@ const update = async (index, user) => {
 const destroy = async (index) => {
   await delay(300);
   // isi di sini
+  users.splice(3,1)
+  users.forEach((item) => {
+    console.log(item);
+    
+  });
 };
 
 /**
